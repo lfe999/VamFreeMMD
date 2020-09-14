@@ -19,7 +19,7 @@ jobs:
       id: zip
       run: |
         mkdir -p publish/Custom/Scripts/LFE/FreeMMD/src
-        cp FreeMMD.cslist public/Custom/Scripts/LFE/FreeMMD/
+        cp FreeMMD.cslist publish/Custom/Scripts/LFE/FreeMMD/
         cp -r src/* publish/Custom/Scripts/LFE/FreeMMD/src/
         cp meta.json publish/
         sed -i 's/v0.0.0/${{ steps.get_version.outputs.VERSION }}/' publish/meta.json
