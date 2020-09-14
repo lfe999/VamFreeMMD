@@ -1,0 +1,8 @@
+src\Extensions.cs
+src\FreeMMD.cs
+src\MMD\MotionData.cs
+src\MMD\FaceMotionData.cs
+src\MMD\VmdFile.cs
+src\MMD\Header.cs
+src\MMD\MotionTrack.cs
+src\TimelineAnimation.cs

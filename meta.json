@@ -1,15 +1,22 @@
 { 
    "licenseType" : "CC BY-SA", 
-   "creatorName" : "Author", 
-   "packageName" : "MyPlugin", 
+   "creatorName" : "LFE", 
+   "packageName" : "FreeMMD", 
    "includeVersionsInReferences" : "true", 
-   "description" : "v0.0.0 MyPlugin Description", 
+   "description" : "v0.0.0 Free MMD plugin", 
    "credits" : "", 
    "instructions" : "", 
-   "promotionalLink" : "https://github.com/Author/MyPlugin", 
+   "promotionalLink" : "https://github.com/LFE/VamFreeMMD", 
    "programVersion" : "1.19.0.5", 
    "contentList" : [ 
-      "Custom\\Scripts\\Author\\MyPlugin\\MyPlugin.cs"
+      "Custom\\Scripts\\LFE\\FreeMMD\\src\\Extensions.cs",
+      "Custom\\Scripts\\LFE\\FreeMMD\\src\\FreeMMD.cs",
+      "Custom\\Scripts\\LFE\\FreeMMD\\src\\MMD\\MotionData.cs",
+      "Custom\\Scripts\\LFE\\FreeMMD\\src\\MMD\\FaceMotionData.cs",
+      "Custom\\Scripts\\LFE\\FreeMMD\\src\\MMD\\Header.cs",
+      "Custom\\Scripts\\LFE\\FreeMMD\\src\\MMD\\VmdFile.cs",
+      "Custom\\Scripts\\LFE\\FreeMMD\\src\\MMD\\MotionTrack.cs",
+      "Custom\\Scripts\\LFE\\FreeMMD\\src\\TimelineAnimation.cs"
    ], 
    "dependencies" : { 
    }
