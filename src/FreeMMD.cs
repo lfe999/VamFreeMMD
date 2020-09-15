@@ -68,7 +68,9 @@ namespace LFE
 
             try
             {
-                // SuperController.singleton.ClearMessages();
+#if LFE_DEBUG
+                SuperController.singleton.ClearMessages();
+#endif
 
                 var frames = MotionTrack.VamPoseAtTime(currentTime);
                 foreach (var frame in frames)
@@ -90,11 +92,23 @@ namespace LFE
                         {
                             controller.transform.localRotation = frame.Rotation;
                         }
+
+#if LFE_DEBUG
+                        if(doPosition){
+                            SuperController.LogMessage($"{frame.ControllerName}: r={frame.Rotation} p={frame.Position}");
+                        }
+                        else {
+                            SuperController.LogMessage($"{frame.ControllerName}: r={frame.Rotation}");
+                        }
+#endif
                     }
                     else if (MotionTrack.BonesByName.ContainsKey(frame.ControllerName))
                     {
                         var bone = MotionTrack.BonesByName[frame.ControllerName];
                         bone.transform.localRotation = frame.Rotation;
+#if LFE_DEBUG
+                        SuperController.LogMessage($"{frame.ControllerName}: r={frame.Rotation}");
+#endif
                     }
                 }
 
