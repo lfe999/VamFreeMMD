@@ -40,11 +40,178 @@ namespace LFE.MMD
             {
                 BonesByName[bone.id] = bone;
             }
+
+            // InitControllers();
+        }
+
+        private void InitController(FreeControllerV3 controller) {
+            var name = controller.name;
+
+            controller.currentPositionState = FreeControllerV3.PositionState.Off;
+            controller.currentRotationState = FreeControllerV3.RotationState.Off;
+
+            switch(name) {
+                case "headControl":
+                    controller.currentRotationState = FreeControllerV3.RotationState.Off;
+
+                    // controller.RBHoldPositionSpring = 454.0f;
+                    // controller.RBHoldPositionDamper = 5.92f;
+                    // controller.RBHoldRotationSpring = 30.0f;
+                    // controller.RBHoldRotationDamper = 12.66f;
+                    // controller.jointRotationDriveSpring = 11.72f;
+                    // controller.jointRotationDriveDamper = 1.0f;
+                    break;
+                case "neckControl":
+                    controller.currentRotationState = FreeControllerV3.RotationState.On;
+
+                    controller.RBHoldPositionSpring = 16.0f;
+                    controller.RBHoldPositionDamper = 7.72f;
+                    controller.RBHoldRotationSpring = 30.0f;
+                    controller.RBHoldRotationDamper = 3.86f;
+                    controller.jointRotationDriveSpring = 23.0f;
+                    controller.jointRotationDriveDamper = 40.0f;
+                    break;
+                case "chestControl":
+                    controller.currentRotationState = FreeControllerV3.RotationState.On;
+
+                    controller.RBHoldPositionSpring = 232.0f;
+                    controller.RBHoldPositionDamper = 75.0f;
+                    controller.RBHoldRotationSpring = 574.0f;
+                    controller.RBHoldRotationDamper = 1.0f;
+                    controller.jointRotationDriveSpring = 410.0f;
+                    controller.jointRotationDriveDamper = 235.0f;
+                    break;
+                case "abdomen2Control":
+                    controller.currentRotationState = FreeControllerV3.RotationState.On;
+
+                    controller.RBHoldPositionSpring = 334.0f;
+                    controller.RBHoldPositionDamper = 135.0f;
+                    controller.RBHoldRotationSpring = 500.0f;
+                    controller.RBHoldRotationDamper = 1.0f;
+                    controller.jointRotationDriveSpring = 271.0f;
+                    controller.jointRotationDriveDamper = 1.0f;
+                    break;
+                case "abdomenControl":
+                    controller.currentRotationState = FreeControllerV3.RotationState.On;
+
+                    controller.RBHoldPositionSpring = 334.0f;
+                    controller.RBHoldPositionDamper = 135.0f;
+                    controller.RBHoldRotationSpring = 500.0f;
+                    controller.RBHoldRotationDamper = 1.0f;
+                    controller.jointRotationDriveSpring = 0.0f;
+                    controller.jointRotationDriveDamper = 0.5f;
+                    break;
+                case "pelvisControl":
+                    controller.currentRotationState = FreeControllerV3.RotationState.On;
+
+                    controller.RBHoldPositionSpring = 734.0f;
+                    controller.RBHoldPositionDamper = 135.0f;
+                    controller.RBHoldRotationSpring = 700.0f;
+                    controller.RBHoldRotationDamper = 1.0f;
+                    controller.jointRotationDriveSpring = 0.0f;
+                    controller.jointRotationDriveDamper = 0.5f;
+                    break;
+                case "hipControl":
+                    controller.currentPositionState = FreeControllerV3.PositionState.On;
+                    controller.currentRotationState = FreeControllerV3.RotationState.On;
+
+                    controller.RBHoldPositionSpring = 1500.0f;
+                    controller.RBHoldPositionDamper = 650.0f;
+                    controller.RBHoldRotationSpring = 500.0f;
+                    controller.RBHoldRotationDamper = 1.0f;
+                    controller.jointRotationDriveSpring = 0.0f;
+                    controller.jointRotationDriveDamper = 0.5f;
+                    break;
+                case "lShoulderControl":
+                case "rShoulderControl":
+                    controller.currentRotationState = FreeControllerV3.RotationState.On;
+
+                    controller.RBHoldPositionSpring = 45.0f;
+                    controller.RBHoldPositionDamper = 35.0f;
+                    controller.RBHoldRotationSpring = 500.0f;
+                    controller.RBHoldRotationDamper = 1.0f;
+                    controller.jointRotationDriveSpring = 102.5f;
+                    controller.jointRotationDriveDamper = 28.75f;
+                    break;
+                case "lArmControl":
+                case "rArmControl":
+                    controller.currentRotationState = FreeControllerV3.RotationState.On;
+
+                    // controller.RBHoldPositionSpring = 182.0f;
+                    // controller.RBHoldPositionDamper = 35.0f;
+                    // controller.RBHoldRotationSpring = 700.0f;
+                    // controller.RBHoldRotationDamper = 1.0f;
+                    // controller.jointRotationDriveSpring = 262.5f;
+                    // controller.jointRotationDriveDamper = 2.0f;
+                    break;
+                case "lElbowControl":
+                case "rElbowControl":
+                    controller.currentRotationState = FreeControllerV3.RotationState.On;
+
+                    // controller.RBHoldPositionSpring = 100.0f;
+                    // controller.RBHoldPositionDamper = 35.0f;
+                    // controller.RBHoldRotationSpring = 280.0f;
+                    // controller.RBHoldRotationDamper = 1.0f;
+                    // controller.jointRotationDriveSpring = 0.0f;
+                    // controller.jointRotationDriveDamper = 0.5f;
+                    break;
+                case "lHandControl":
+                case "rHandControl":
+                    controller.currentRotationState = FreeControllerV3.RotationState.On;
+
+                    // controller.RBHoldPositionSpring = 250.0f;
+                    // controller.RBHoldPositionDamper = 1.0f;
+                    // controller.RBHoldRotationSpring = 450.0f;
+                    // controller.RBHoldRotationDamper = 0.5f;
+                    // controller.jointRotationDriveSpring = 0.0f;
+                    // controller.jointRotationDriveDamper = 0.0f;
+                    break;
+                case "lHipControl":
+                case "rHipControl":
+                    controller.currentRotationState = FreeControllerV3.RotationState.On;
+
+                    controller.RBHoldPositionSpring = 2000.0f;
+                    controller.RBHoldPositionDamper = 435.0f;
+                    controller.RBHoldRotationSpring = 500.0f;
+                    controller.RBHoldRotationDamper = 1.0f;
+                    controller.jointRotationDriveSpring = 0.0f;
+                    controller.jointRotationDriveDamper = 0.5f;
+                    break;
+                case "lKneeControl":
+                case "rKneeControl":
+                    controller.currentRotationState = FreeControllerV3.RotationState.On;
+
+                    controller.RBHoldPositionSpring = 500.0f;
+                    controller.RBHoldPositionDamper = 3.0f;
+                    controller.RBHoldRotationSpring = 500.0f;
+                    controller.RBHoldRotationDamper = 1.0f;
+                    controller.jointRotationDriveSpring = 0.0f;
+                    controller.jointRotationDriveDamper = 0.5f;
+                    break;
+                case "lFootControl":
+                case "rFootControl":
+                    if(_vmdFile.UsesIK) {
+                        controller.currentPositionState = FreeControllerV3.PositionState.On;
+                    }
+                    controller.RBHoldPositionSpring = 10000.0f;
+                    controller.RBHoldPositionDamper = 2.0f;
+                    controller.RBHoldRotationSpring = 450.0f;
+                    controller.RBHoldRotationDamper = 1.0f;
+                    controller.jointRotationDriveSpring = 0.0f;
+                    controller.jointRotationDriveDamper = 0.5f;
+                    break;
+                default:
+                    controller.currentRotationState = FreeControllerV3.RotationState.On;
+                    break;
+
+            }
         }
 
         private void InitControllers()
         {
-
+            foreach(var controller in Person.freeControllers) {
+                InitController(controller);
+            }
         }
 
         public List<VamFrameData> VamPoseAtTime(float time)
@@ -85,22 +252,24 @@ namespace LFE.MMD
                 {
                     var controller = ControllersByName[vamBoneName];
 
-                    controller.currentPositionState = FreeControllerV3.PositionState.Off;
-                    controller.currentRotationState = FreeControllerV3.RotationState.Off;
+                    InitController(controller);
 
-                    if (vamBoneName == "hipControl")
-                    {
-                        controller.currentPositionState = FreeControllerV3.PositionState.On;
-                        controller.currentRotationState = FreeControllerV3.RotationState.On;
-                    }
-                    else if (_vmdFile.UsesIK && (vamBoneName == "lFootControl" || vamBoneName == "rFootControl"))
-                    {
-                        controller.currentPositionState = FreeControllerV3.PositionState.On;
-                    }
-                    else
-                    {
-                        controller.currentRotationState = FreeControllerV3.RotationState.On;
-                    }
+                    // controller.currentPositionState = FreeControllerV3.PositionState.Off;
+                    // controller.currentRotationState = FreeControllerV3.RotationState.Off;
+
+                    // if (vamBoneName == "hipControl")
+                    // {
+                    //     controller.currentPositionState = FreeControllerV3.PositionState.On;
+                    //     controller.currentRotationState = FreeControllerV3.RotationState.On;
+                    // }
+                    // else if (_vmdFile.UsesIK && (vamBoneName == "lFootControl" || vamBoneName == "rFootControl"))
+                    // {
+                    //     controller.currentPositionState = FreeControllerV3.PositionState.On;
+                    // }
+                    // else
+                    // {
+                    //     controller.currentRotationState = FreeControllerV3.RotationState.On;
+                    // }
                 }
                 else
                 {
