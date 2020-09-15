@@ -49,7 +49,7 @@ namespace LFE.MMD
 
         public List<VamFrameData> VamPoseAtTime(float time)
         {
-            uint frameId = (uint)(time * 30);
+            uint frameId = (uint)(time * VmdFile.Fps);
             return VamPoseAtFrame(frameId);
         }
 
