@@ -64,12 +64,12 @@ namespace LFE.MMD
                 case "neckControl":
                     controller.currentRotationState = FreeControllerV3.RotationState.On;
 
-                    controller.RBHoldPositionSpring = 16.0f;
-                    controller.RBHoldPositionDamper = 7.72f;
-                    controller.RBHoldRotationSpring = 30.0f;
-                    controller.RBHoldRotationDamper = 3.86f;
-                    controller.jointRotationDriveSpring = 23.0f;
-                    controller.jointRotationDriveDamper = 40.0f;
+                    // controller.RBHoldPositionSpring = 16.0f;
+                    // controller.RBHoldPositionDamper = 7.72f;
+                    // controller.RBHoldRotationSpring = 30.0f;
+                    // controller.RBHoldRotationDamper = 3.86f;
+                    // controller.jointRotationDriveSpring = 23.0f;
+                    // controller.jointRotationDriveDamper = 40.0f;
                     break;
                 case "chestControl":
                     controller.currentRotationState = FreeControllerV3.RotationState.On;
@@ -115,12 +115,12 @@ namespace LFE.MMD
                     controller.currentPositionState = FreeControllerV3.PositionState.On;
                     controller.currentRotationState = FreeControllerV3.RotationState.On;
 
-                    controller.RBHoldPositionSpring = 1500.0f;
-                    controller.RBHoldPositionDamper = 650.0f;
-                    controller.RBHoldRotationSpring = 500.0f;
-                    controller.RBHoldRotationDamper = 1.0f;
-                    controller.jointRotationDriveSpring = 0.0f;
-                    controller.jointRotationDriveDamper = 0.5f;
+                    // controller.RBHoldPositionSpring = 1500.0f;
+                    // controller.RBHoldPositionDamper = 650.0f;
+                    // controller.RBHoldRotationSpring = 500.0f;
+                    // controller.RBHoldRotationDamper = 1.0f;
+                    // controller.jointRotationDriveSpring = 0.0f;
+                    // controller.jointRotationDriveDamper = 0.5f;
                     break;
                 case "lShoulderControl":
                 case "rShoulderControl":
@@ -160,23 +160,23 @@ namespace LFE.MMD
                     controller.currentRotationState = FreeControllerV3.RotationState.On;
 
                     // controller.RBHoldPositionSpring = 250.0f;
-                    // controller.RBHoldPositionDamper = 1.0f;
+                    controller.RBHoldPositionDamper = 1.0f;
                     // controller.RBHoldRotationSpring = 450.0f;
-                    // controller.RBHoldRotationDamper = 0.5f;
-                    // controller.jointRotationDriveSpring = 0.0f;
-                    // controller.jointRotationDriveDamper = 0.0f;
+                    controller.RBHoldRotationDamper = 0.5f;
+                    controller.jointRotationDriveSpring = 100f;
+                    controller.jointRotationDriveDamper = 0.0f;
                     break;
-                case "lHipControl":
-                case "rHipControl":
-                    controller.currentRotationState = FreeControllerV3.RotationState.On;
+                // case "lHipControl":
+                // case "rHipControl":
+                //     controller.currentRotationState = FreeControllerV3.RotationState.On;
 
-                    controller.RBHoldPositionSpring = 2000.0f;
-                    controller.RBHoldPositionDamper = 435.0f;
-                    controller.RBHoldRotationSpring = 500.0f;
-                    controller.RBHoldRotationDamper = 1.0f;
-                    controller.jointRotationDriveSpring = 0.0f;
-                    controller.jointRotationDriveDamper = 0.5f;
-                    break;
+                //     controller.RBHoldPositionSpring = 2000.0f;
+                //     controller.RBHoldPositionDamper = 435.0f;
+                //     controller.RBHoldRotationSpring = 500.0f;
+                //     controller.RBHoldRotationDamper = 1.0f;
+                //     controller.jointRotationDriveSpring = 0.0f;
+                //     controller.jointRotationDriveDamper = 0.5f;
+                //     break;
                 case "lKneeControl":
                 case "rKneeControl":
                     controller.currentRotationState = FreeControllerV3.RotationState.On;
@@ -192,6 +192,9 @@ namespace LFE.MMD
                 case "rFootControl":
                     if(_vmdFile.UsesIK) {
                         controller.currentPositionState = FreeControllerV3.PositionState.On;
+                    }
+                    else {
+                        controller.currentRotationState = FreeControllerV3.RotationState.On;
                     }
                     controller.RBHoldPositionSpring = 10000.0f;
                     controller.RBHoldPositionDamper = 2.0f;

@@ -48,19 +48,12 @@ namespace LFE
                 return;
             }
 
+            if(Time.fixedDeltaTime == 0) {
+                return;
+            }
 
             var maxTime = MotionTrack.MaxFrame / VmdFile.Fps;
-            var headAudioSource = containingAtom.GetStorableByID("HeadAudioSource") as AudioSourceControl;
-            if (AudioClip != null && headAudioSource != null && headAudioSource.audioSource != null)
-            {
-                currentTime += Time.fixedDeltaTime;
-            }
-            else
-            {
-                currentTime += Time.fixedDeltaTime;
-            }
 
-            // TOOD: allow looping later -- this assume we end
             if (currentTime > maxTime)
             {
                 StopAndStartOver();
@@ -125,6 +118,8 @@ namespace LFE
                 SuperController.LogError(e.ToString());
                 isPlaying = false;
             }
+
+            currentTime += Time.fixedDeltaTime;
 
         }
 
@@ -241,6 +236,9 @@ namespace LFE
                         {
                             try
                             {
+                                if(string.IsNullOrEmpty(p)) {
+                                    return;
+                                }
                                 StopAndStartOver();
                                 ResetPose();
                                 var vmdFile = VmdFile.Read(p);
@@ -279,6 +277,9 @@ namespace LFE
                         {
                             try
                             {
+                                if(string.IsNullOrEmpty(p)) {
+                                    return;
+                                }
                                 StopAndStartOver();
                                 AudioClip = LoadAudio(p);
                                 StorableMusicFileName.val = p;
