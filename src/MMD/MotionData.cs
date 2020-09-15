@@ -16,7 +16,7 @@ namespace LFE.MMD
         public Quaternion Rotation { get; set; }
         public byte[][][] Interpolation { get; set; }
 
-        public float VamTimestamp => FrameId / 30f;
+        public float VamTimestamp => FrameId / VmdFile.Fps;
 
         public static MotionData Parse(BytesReader reader)
         {

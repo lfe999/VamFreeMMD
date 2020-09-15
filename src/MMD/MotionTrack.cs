@@ -319,7 +319,7 @@ namespace LFE.MMD
         public Dictionary<string, FaceMotionData> VamFacesAtTime(float time)
         {
             // TODO: map to vam morphs
-            uint frameId = (uint)(time * 30);
+            uint frameId = (uint)(time * VmdFile.Fps);
             return InterpolatedFacesAtFrame(frameId);
         }
 

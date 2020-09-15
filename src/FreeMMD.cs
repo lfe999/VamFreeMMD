@@ -49,13 +49,11 @@ namespace LFE
             }
 
 
-            var maxTime = MotionTrack.MaxFrame / 30;
+            var maxTime = MotionTrack.MaxFrame / VmdFile.Fps;
             var headAudioSource = containingAtom.GetStorableByID("HeadAudioSource") as AudioSourceControl;
             if (AudioClip != null && headAudioSource != null && headAudioSource.audioSource != null)
             {
-                currentTime = headAudioSource.audioSource.time;
-                // SuperController.singleton.ClearMessages();
-                // SuperController.LogMessage($"{currentTime} {headAudioSource.audioSource.time}");
+                currentTime += Time.fixedDeltaTime;
             }
             else
             {

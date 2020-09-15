@@ -18,6 +18,8 @@ namespace LFE.MMD
         public IEnumerable<FaceMotionData> FaceMotions => FaceMotionsByBone.SelectMany(kvp => kvp.Value);
         public bool UsesIK { get; private set; }
 
+        public static float Fps = 30;
+
         private VmdFile(byte[] data)
         {
 
